@@ -1,0 +1,25 @@
+# NODE
+node_modules
+
+# NUXT
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Logs
+logs
+*.log
+
+# MACOS
+.DS_Store
+
+# WEBSTORM
+.idea
+
+# ENV
+.env
+.env.*
+!.env.example
