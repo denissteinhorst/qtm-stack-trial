@@ -61,15 +61,27 @@ pnpm dev # Start the development server to see if everything works
 CMD + C # Stop the development server
 ```
 
+## HIGHCHARTS
+```bash
+pnpm add highcharts-vue # Install Highcharts and the Highcharts Vue wrapper
+touch ./plugins/highcharts.client.ts # Create a new plugin file for Highcharts
+# Register Vue plugin for nuxt as described in: https://nuxt.com/docs/guide/directory-structure/plugins#vue-plugins
+# Alter nuxt.config.ts to include the Highcharts plugin, ensure client-only usage
+# Add a Highcharts component to a page to test
+pnpm dev # Start the development server to see if everything works
+CMD + C # Stop the development server
+```
+
 ## Stack Documentation
 
-| Package/Library | Website                                        | Description                                                                    | Documentation                                                           |
-|-----------------|------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| Homebrew        | [Homebrew](https://brew.sh)                    | The Missing Package Manager for macOS (or Linux)                               | [Nuxt 3 Docs](https://nuxt.com/docs)                                    |
-| nvm             | [nvm on Github](https://github.com/nvm-sh/nvm) | Node Version Manager                                                           | [Readme](https://github.com/nvm-sh/nvm/blob/master/README.md)           |
-| node            | [node](https://nodejs.org/en)                  | Node.js® is a free, open-source, cross-platform JavaScript runtime environment | [Vite Docs](https://vitejs.dev/guide/)                                  |
-| pnpm            | [pnpm](https://pnpm.io/)                       | Fast, disk space efficient package manager                                     | [pnpm Docs](https://pnpm.io/)                                           |
-| Nuxt 3          | [Nuxt 3](https://nuxt.com)                     | The Intuitive Web Framework                                                    | [Nuxt 3 Docs](https://nuxt.com/docs)                                    |
-| Vue 3           | [Vue 3](https://vuejs.org)                     | Next Generation Frontend Tooling                                               | [Vue 3 Docs](https://v3.vuejs.org/)                                     |
-| Vite            | [Vite](https://vitejs.dev/)                    | The Progressive JavaScript Framework                                           | [Vite Docs](https://vitejs.dev/guide/)                                  |
-| Vuetify         | [Vuetify](https://vuetifyjs.com)               | Material Design Component Framework                                            | [Vuetify Docs](https://vuetifyjs.com/en/getting-started/installation/#using-nuxt-3)  |
+| Package/Library | Website                                        | Description                                                                    | Documentation                                                                       |
+|-----------------|------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| Homebrew        | [Homebrew](https://brew.sh)                    | The Missing Package Manager for macOS (or Linux)                               | [Nuxt 3 Docs](https://nuxt.com/docs)                                                |
+| nvm             | [nvm on Github](https://github.com/nvm-sh/nvm) | Node Version Manager                                                           | [Readme](https://github.com/nvm-sh/nvm/blob/master/README.md)                       |
+| node            | [node](https://nodejs.org/en)                  | Node.js® is a free, open-source, cross-platform JavaScript runtime environment | [Vite Docs](https://vitejs.dev/guide/)                                              |
+| pnpm            | [pnpm](https://pnpm.io/)                       | Fast, disk space efficient package manager                                     | [pnpm Docs](https://pnpm.io/)                                                       |
+| Nuxt 3          | [Nuxt 3](https://nuxt.com)                     | The Intuitive Web Framework                                                    | [Nuxt 3 Docs](https://nuxt.com/docs)                                                |
+| Vue 3           | [Vue 3](https://vuejs.org)                     | Next Generation Frontend Tooling                                               | [Vue 3 Docs](https://v3.vuejs.org/)                                                 |
+| Vite            | [Vite](https://vitejs.dev/)                    | The Progressive JavaScript Framework                                           | [Vite Docs](https://vitejs.dev/guide/)                                              |
+| Vuetify         | [Vuetify](https://vuetifyjs.com)               | Material Design Component Framework                                            | [Vuetify Docs](https://vuetifyjs.com/en/getting-started/installation/#using-nuxt-3) |
+| Highcharts      | [Highcharts](https://www.highcharts.com)       | Interactive JavaScript charts                                                  | [Highcharts Docs](https://www.highcharts.com/docs/index)                            |

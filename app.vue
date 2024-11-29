@@ -34,10 +34,26 @@
       </v-dialog>
           </v-col>
         </v-row>
+        <v-row>
+          <v-col>
+            <h1>Highcharts</h1>
+            <client-only>
+              <highcharts :options="options" />
+            </client-only>
+          </v-col>
+        </v-row>
       </v-container>
     </v-app>
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
+const options = ref({
+  title: {
+    text: 'My chart'
+  },
+  series: [{
+    data: [1, 2, 3]
+  }]
+});
 </script>

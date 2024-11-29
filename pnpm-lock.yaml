@@ -11,6 +11,12 @@ importers:
       '@mdi/font':
         specifier: ^7.4.47
         version: 7.4.47
+      highcharts:
+        specifier: ^12.0.1
+        version: 12.0.1
+      highcharts-vue:
+        specifier: ^2.0.1
+        version: 2.0.1(highcharts@12.0.1)(vue@3.5.13(typescript@5.7.2))
       nuxt:
         specifier: ^3.14.1592
         version: 3.14.1592(@parcel/watcher@2.5.0)(@types/node@22.10.1)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.27.4)(terser@5.36.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.1)(terser@5.36.0))
@@ -1670,6 +1676,15 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  highcharts-vue@2.0.1:
+    resolution: {integrity: sha512-7yVaKvsWlx7OgmKFXE2D99fi/0tr2A85H4KUz3jL7CRQhAwvEvXgtDIyTBGLHJsOC5L9VlppAI7k6KfIi0j0hg==}
+    peerDependencies:
+      highcharts: '>=5.0.0'
+      vue: '>=3.0.0'
+
+  highcharts@12.0.1:
+    resolution: {integrity: sha512-86pku0cZnHfEu6uqbbEpU50XKHcAFFXeD4pYvxlVBRDLRDlxpT0WuClgJBuBJZof1ZjFUh1D7IxUxFgt9Epb7Q==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -4905,6 +4920,13 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  highcharts-vue@2.0.1(highcharts@12.0.1)(vue@3.5.13(typescript@5.7.2)):
+    dependencies:
+      highcharts: 12.0.1
+      vue: 3.5.13(typescript@5.7.2)
+
+  highcharts@12.0.1: {}
 
   hookable@5.5.3: {}
 

@@ -15,11 +15,15 @@ export default defineNuxtConfig({
       })
     },
   ],
+  plugins: [{ src: "~/plugins/highcharts.client.ts", mode: "client" }],
   vite: {
     vue: {
       template: {
         transformAssetUrls,
       },
+      compilerOptions: {
+        isCustomElement: (tag) => tag === 'highcharts',
+      }
     },
   },
 })
