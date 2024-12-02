@@ -21,7 +21,9 @@ export default defineNuxtConfig({
       template: {
         transformAssetUrls,
       },
+      // @ts-expect-error
       compilerOptions: {
+        // @ts-expect-error
         isCustomElement: (tag) => tag === 'highcharts',
       }
     },

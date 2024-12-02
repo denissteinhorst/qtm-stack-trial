@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "@nuxtjs/proxy": "^2.1.0",
     "highcharts": "^12.0.1",
     "highcharts-vue": "^2.0.1",
     "nuxt": "^3.14.1592",
@@ -19,6 +20,7 @@
   },
   "packageManager": "pnpm@9.2.0+sha256.94fab213df221c55b6956b14a2264c21c6203cca9f0b3b95ff2fe9b84b120390",
   "devDependencies": {
+    "sass": "^1.81.0",
     "vite-plugin-vuetify": "^2.0.4",
     "vuetify": "^3.7.4"
   }
