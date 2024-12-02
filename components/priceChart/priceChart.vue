@@ -1,6 +1,8 @@
 <template>
   <article class="price-chart">
-    <h1 class="price-chart__title">Highcharts</h1>
+    <h1 class="price-chart__title">Highcharts + Pinia</h1>
+
+    <!-- chart -->
     <template v-if="isLoading">
       <v-skeleton-loader type="card" class="price-chart__loader" />
     </template>
@@ -9,16 +11,29 @@
           <highcharts :options="options" :class="['price-chart__chart', { 'price-chart__chart--fade-in': !isLoading }]" />
       </client-only>
     </template>
+
+    <!-- data source -->
+    <v-divider />
+    <template v-if="localResolver">
+      <v-btn @click="handleRefresh()">Refresh Data from API</v-btn>
+    </template>
+    <template v-else>
+      <p>The request came straight from the API. <a href="#" @click.prevent="reloadPage()">Reload the page</a> to trigger the Cache</p>
+    </template>
+
   </article>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { useApiStore } from '~/stores/apiStore';
 import { usePrice } from '~/composables/usePrice';
 import { useUtils } from '~/composables/useUtils';
 
+const { clearStore } = useApiStore();
 const isLoading = ref(true);
 const options = ref({});
+const localResolver = ref(true);
 
 const {
   timestampToRegularTime,
@@ -29,8 +44,8 @@ const {
 } = useUtils();
 
 const fetchData = async () => {
-  const { priceData: priceDataToday } = await usePrice('DE-LU');
-  const { priceData: priceDataYesterday } = await usePrice('DE-LU', getYesterdayTimestamps('start'), getYesterdayTimestamps('end'));
+  const { priceData: priceDataToday, resolvedLocally } = await usePrice('DE-LU');
+  const { priceData: priceDataYesterday} = await usePrice('DE-LU', getYesterdayTimestamps('start'), getYesterdayTimestamps('end'));
   const { priceData: priceDataYesterdayAYearAgo } = await usePrice('DE-LU', getTodayTimestampsOneYearAgo('start'), getTodayTimestampsOneYearAgo('end'));
   const currentTimeIndex = getCurrentTime().toString().split(':')[0];
 
@@ -86,6 +101,17 @@ const fetchData = async () => {
   };
 
   isLoading.value = false;
+  localResolver.value = resolvedLocally?.value ?? false;
+};
+
+const handleRefresh = async () => {
+  isLoading.value = true;
+  clearStore();
+  fetchData();
+};
+
+const reloadPage = () => {
+  window.location.reload();
 };
 
 onMounted(() => {
@@ -115,6 +141,10 @@ $block: 'price-chart';
 
   :deep(.v-skeleton-loader__image) {
     height: 400px;
+  }
+
+  :deep(.v-divider) {
+    margin: 1rem 0;
   }
 }
 </style>

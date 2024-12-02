@@ -1,4 +1,5 @@
 import type { IPriceData } from "~/types/type";
+import { useApiStore } from '~/stores/apiStore';
 
 /**
  * Composable function to fetch the price data from the API
@@ -8,6 +9,9 @@ import type { IPriceData } from "~/types/type";
  * @returns priceData
  */
 export const usePrice = async (bzn: string, start?: number, end?: number) => {
+  const apiStore = useApiStore();
+  const resolvedLocally = ref<boolean>();
+
   let apiUrl = '/api/energy-charts?endpoint=price';
 
   if (bzn) {
@@ -22,22 +26,33 @@ export const usePrice = async (bzn: string, start?: number, end?: number) => {
     apiUrl += `&end=${end}`;
   }
 
+  const response = apiStore.getResponse(apiUrl);
   const priceData: Ref<IPriceData | undefined> = ref();
 
-  try {
-    const response: any = await $fetch(apiUrl);
+  if (response) {
+    console.info(`\`${apiUrl}\` - resolving from STORE`);
+    priceData.value = response.data;
+    resolvedLocally.value = true;
+  } else {
+    console.info(`\`${apiUrl}\` - resolving from API`);
+    try {
+      const response: any = await $fetch(apiUrl);
 
-    if (response.status === 200) {
-      priceData.value = response.data;
-    } else {
-      console.error("No data returned from the API");
+      if (response.status === 200) {
+        priceData.value = response.data;
+        apiStore.addResponse(apiUrl, response.data);
+        resolvedLocally.value = false;
+      } else {
+        console.error("No data returned from the API");
+      }
+    } catch (error) {
+      priceData.value = undefined;
+      console.error("Error fetching data:", error);
     }
-  } catch (error) {
-    priceData.value = undefined;
-    console.error("Error fetching data:", error);
   }
 
   return {
     priceData,
+    resolvedLocally,
   }
 }

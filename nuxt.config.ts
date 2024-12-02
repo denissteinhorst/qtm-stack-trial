@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   modules: [
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error

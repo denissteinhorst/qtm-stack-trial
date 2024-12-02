@@ -72,17 +72,31 @@ pnpm dev # Start the development server to see if everything works
 CMD + C # Stop the development server
 ```
 
+## PINIA
+```bash
+pnpm add pinia pinia-plugin-persistedstate # Install Pinia
+mkdir stores && touch ./store/apiStore.ts # Create a new store file for Pinia
+# Register the store in the nuxt.config.ts file
+# Create a new store for the API data
+# Include the store in the composable and the component
+pnpm dev # Start the development server to see if everything works
+CMD + C # Stop the development server
+```
+
 ## Stack Documentation
 
-| Package/Library    | Website                                          | Description                                                                    | Documentation                                                                       |
-|--------------------|--------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| Homebrew           | [Homebrew](https://brew.sh)                      | The Missing Package Manager for macOS (or Linux)                               | [Nuxt 3 Docs](https://nuxt.com/docs)                                                |
-| nvm                | [nvm on Github](https://github.com/nvm-sh/nvm)   | Node Version Manager                                                           | [Readme](https://github.com/nvm-sh/nvm/blob/master/README.md)                       |
-| node               | [node](https://nodejs.org/en)                    | Node.js® is a free, open-source, cross-platform JavaScript runtime environment | [Vite Docs](https://vitejs.dev/guide/)                                              |
-| pnpm               | [pnpm](https://pnpm.io/)                         | Fast, disk space efficient package manager                                     | [pnpm Docs](https://pnpm.io/)                                                       |
-| Nuxt 3             | [Nuxt 3](https://nuxt.com)                       | The Intuitive Web Framework                                                    | [Nuxt 3 Docs](https://nuxt.com/docs)                                                |
-| Vue 3              | [Vue 3](https://vuejs.org)                       | Next Generation Frontend Tooling                                               | [Vue 3 Docs](https://v3.vuejs.org/)                                                 |
-| Vite               | [Vite](https://vitejs.dev/)                      | The Progressive JavaScript Framework                                           | [Vite Docs](https://vitejs.dev/guide/)                                              |
-| Vuetify            | [Vuetify](https://vuetifyjs.com)                 | Material Design Component Framework                                            | [Vuetify Docs](https://vuetifyjs.com/en/getting-started/installation/#using-nuxt-3) |
-| Highcharts         | [Highcharts](https://www.highcharts.com)         | Interactive JavaScript charts                                                  | [Highcharts Docs](https://www.highcharts.com/docs/index)                            |
-| Energy-Charts API  | [Energy-Charts API](https://energy-charts.info)  | API for Energy Data                                                            | [Energy-Charts API Docs](https://energy-charts.info)                                |
+| Package/Library       | Website                                                                          | Description                                                                    | Documentation                                                                                             |
+|-----------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| Homebrew              | [Homebrew](https://brew.sh)                                                      | The Missing Package Manager for macOS (or Linux)                               | [Nuxt 3 Docs](https://nuxt.com/docs)                                                                      |
+| nvm                   | [nvm on Github](https://github.com/nvm-sh/nvm)                                   | Node Version Manager                                                           | [Readme](https://github.com/nvm-sh/nvm/blob/master/README.md)                                             |
+| node                  | [node](https://nodejs.org/en)                                                    | Node.js® is a free, open-source, cross-platform JavaScript runtime environment | [Vite Docs](https://vitejs.dev/guide/)                                                                    |
+| pnpm                  | [pnpm](https://pnpm.io/)                                                         | Fast, disk space efficient package manager                                     | [pnpm Docs](https://pnpm.io/)                                                                             |
+| Nuxt 3                | [Nuxt 3](https://nuxt.com)                                                       | The Intuitive Web Framework                                                    | [Nuxt 3 Docs](https://nuxt.com/docs)                                                                      |
+| Vue 3                 | [Vue 3](https://vuejs.org)                                                       | Next Generation Frontend Tooling                                               | [Vue 3 Docs](https://v3.vuejs.org/)                                                                       |
+| Vite                  | [Vite](https://vitejs.dev/)                                                      | The Progressive JavaScript Framework                                           | [Vite Docs](https://vitejs.dev/guide/)                                                                    |
+| Vuetify               | [Vuetify](https://vuetifyjs.com)                                                 | Material Design Component Framework                                            | [Vuetify Docs](https://vuetifyjs.com/en/getting-started/installation/#using-nuxt-3)                       |
+| Highcharts            | [Highcharts](https://www.highcharts.com)                                         | Interactive JavaScript charts                                                  | [Highcharts Docs](https://www.highcharts.com/docs/index)                                                  |
+| Energy-Charts API     | [Energy-Charts API](https://energy-charts.info)                                  | API for Energy Data                                                            | [Energy-Charts API Docs](https://energy-charts.info)                                                      |
+| Pinia                 | [Pinia](https://pinia.esm.dev)                                                   | Intuitive, type-safe, light and flexible Store for Vue 3                       | [Pinia Docs](https://pinia.esm.dev/)                                                                      |
+| Pinia PersistedState  | [Pinia PersistedState](https://prazdevs.github.io/pinia-plugin-persistedstate/)  | Pinia plugin to persist the store state to the local storage                   | [Pinia PersistedState Docs](https://prazdevs.github.io/pinia-plugin-persistedstate/frameworks/nuxt.html)  |
+```
