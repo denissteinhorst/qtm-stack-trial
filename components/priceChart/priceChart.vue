@@ -12,15 +12,15 @@
       </client-only>
     </template>
 
-    <!-- data source -->
     <v-divider />
+
+    <!-- data source -->
     <template v-if="localResolver">
       <v-btn @click="handleRefresh()">Refresh Data from API</v-btn>
     </template>
     <template v-else>
       <p>The request came straight from the API. <a href="#" @click.prevent="reloadPage()">Reload the page</a> to trigger the Cache</p>
     </template>
-
   </article>
 </template>
 
@@ -104,19 +104,14 @@ const fetchData = async () => {
   localResolver.value = resolvedLocally?.value ?? false;
 };
 
-const handleRefresh = async () => {
+const handleRefresh = () => {
   isLoading.value = true;
   clearStore();
   fetchData();
 };
 
-const reloadPage = () => {
-  window.location.reload();
-};
-
-onMounted(() => {
-  fetchData();
-});
+const reloadPage = () => window.location.reload();
+onMounted(() => fetchData());
 </script>
 
 <style scoped lang="scss">

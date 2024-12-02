@@ -57,7 +57,6 @@ export const useUtils = () => {
     return Math.floor(todayOneYearAgo.getTime() / 1000);
   }
 
-
   return {
     timestampToRegularTime,
     getTodayDateLong,
