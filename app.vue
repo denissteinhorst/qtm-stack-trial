@@ -52,6 +52,11 @@
             {{ new Date().getFullYear() }} — <strong>Denis Steinhorst</strong> | <a href="https://www.steinhorst.dev" target="_blank" rel="noopener nofollow">steinhorst.dev</a>
           </v-col>
         </v-row>
+        <v-row justify="center" no-gutters>
+          <v-col class="text-center mt-4" cols="12">
+            <a href="https://github.com/denissteinhorst/qtm-stack-trial" target="_blank" rel="noopener nofollow">View the source code on Github</a>
+          </v-col>
+        </v-row>
       </v-footer>
     </v-app>
   </NuxtLayout>
