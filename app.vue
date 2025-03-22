@@ -37,7 +37,7 @@
             </template>
           </v-dialog>
         </template>
-        <v-app-bar-title>QTM Stack-Trial</v-app-bar-title>
+        <v-app-bar-title>QTM Stack-Trial:</v-app-bar-title>
       </v-app-bar>
 
       <!-- Main content -->
